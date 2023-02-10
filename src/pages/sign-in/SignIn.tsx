@@ -1,31 +1,24 @@
 import React from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { singUpTC } from '../../redux/auth-reducer';
-import { ISignUpFormValues } from '../../models/forms-interfaces';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { singInTC } from '../../redux/auth-reducer';
+import { ISignInFormValues } from '../../models/forms-interfaces';
 
-export const SignUp: React.FC = () => {
+export const SignIn: React.FC = () => {
     const dispatch = useDispatch();
 
-    const { register, handleSubmit, formState: { errors, isValid } } = useForm<ISignUpFormValues>({
+    const { register, handleSubmit, formState: { errors, isValid } } = useForm<ISignInFormValues>({
         mode: 'onChange'
     });
 
-    const onSubmit: SubmitHandler<ISignUpFormValues> = (data) => {
+    const onSubmit: SubmitHandler<ISignInFormValues> = (data) => {
         // @ts-ignore
-        dispatch(singUpTC(data));
+        dispatch(singInTC(data));
     };
 
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
-                    <input type={'text'} {...register('name', {
-                        required: 'Enter text please',
-                        minLength: { value: 3, message: 'Min length is 3 symbols' }
-                    })} placeholder={'Email'} />
-                    {errors?.name && <p>{errors?.name.message}</p>}
-                </div>
                 <div>
                     <input type={'text'} {...register('login', {
                         required: 'Enter text please',
@@ -42,7 +35,7 @@ export const SignUp: React.FC = () => {
                 </div>
 
                 <div>
-                    <button disabled={!isValid}>Sign up</button>
+                    <button disabled={!isValid}>Sign in</button>
                 </div>
             </form>
         </>
