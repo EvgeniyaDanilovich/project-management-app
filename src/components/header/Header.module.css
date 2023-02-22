@@ -30,3 +30,7 @@
 a.active{
     text-decoration: underline;
 }
+
+.subRow{
+    display: flex;
+}

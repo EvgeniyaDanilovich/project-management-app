@@ -14,10 +14,6 @@ export const SignIn: React.FC = () => {
         mode: 'onChange'
     });
 
-    // useEffect(() => {
-    //     localStorage.clear()
-    // }, [])
-
     if (isAuth) return <Navigate to="/boards" />;
 
     const onSubmit: SubmitHandler<ISignInFormValues> = (data) => {
