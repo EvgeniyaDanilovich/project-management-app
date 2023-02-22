@@ -1,5 +1,15 @@
-import { InferActionsTypes, TBaseThunk } from '../redux/store';
-import { authActions } from '../redux/auth-reducer';
+export interface AuthInitState {
+    id: null | string,
+    name: null | string,
+    login: null | string,
+    token: null | string,
+    isAuth: boolean
+}
 
-export type TAuthActions = InferActionsTypes<typeof authActions>
-export type TAuthThunk = TBaseThunk<TAuthActions>
+export interface IsAuthValue {
+    value: boolean;
+}
+
+export interface IUserId {
+    id: string;
+}

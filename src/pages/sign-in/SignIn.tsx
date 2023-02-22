@@ -1,18 +1,26 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { singInTC } from '../../redux/auth-reducer';
 import { ISignInFormValues } from '../../models/forms-interfaces';
+import { singInTC } from '../../redux/auth-slice';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { Navigate } from 'react-router-dom';
 
 export const SignIn: React.FC = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+    const { isAuth } = useAppSelector((state) => state.auth);
+    console.log(isAuth);
 
     const { register, handleSubmit, formState: { errors, isValid } } = useForm<ISignInFormValues>({
         mode: 'onChange'
     });
 
+    // useEffect(() => {
+    //     localStorage.clear()
+    // }, [])
+
+    if (isAuth) return <Navigate to="/boards" />;
+
     const onSubmit: SubmitHandler<ISignInFormValues> = (data) => {
-        // @ts-ignore
         dispatch(singInTC(data));
     };
 

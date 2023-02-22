@@ -1,23 +1,19 @@
-import { Action, applyMiddleware, combineReducers, compose, configureStore, createStore, ThunkAction } from '@reduxjs/toolkit';
-import { authReducer } from './auth-reducer';
-import thunkMiddleware from 'redux-thunk';
-import thunk from 'redux-thunk';
-
-export type RootStateType = ReturnType<typeof rootReducer>
-
-export type InferActionsTypes<T> = T extends { [key: string]: (...args: any[]) => infer U } ? U : never;
-export type TBaseThunk<A extends Action, R = void> = ThunkAction<R, RootStateType, unknown, A>
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import authReducer from './auth-slice';
+import boardsReducer from './boards-slice';
 
 const rootReducer = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    boards: boardsReducer
 });
 
 export const store = configureStore({
-    reducer: rootReducer
+    reducer: rootReducer,
+    devTools: true
 });
 
-// @ts-ignore
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose();
-// export const store = createStore(rootReducer, composeEnhancers(
-//     applyMiddleware(thunkMiddleware)
-// ));
+export type RootStateType = ReturnType<typeof rootReducer>;
+export type AppDispatch = typeof store.dispatch;
+
+// export type AppStore = ReturnType<typeof setupStore>;
+// export type AppDispatch = AppStore['dispatch'];
