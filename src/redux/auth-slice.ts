@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { authAPI } from '../api/auth-api';
-import { AuthInitState, IsAuthValue, IUserId } from '../models/reducers-types';
+import { AuthInitState, IsAuthValue, IUserId } from '../models/auth-interfaces';
 import { ISignInFormValues, ISignUpFormValues } from '../models/forms-interfaces';
 import { ISignInResponse, ISignUpResponse } from '../models/api-interfaces';
 import { setToken, setUserId } from '../utils/localStorage';

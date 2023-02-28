@@ -5,14 +5,19 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setIsAuth } from '../../redux/auth-slice';
 import { removeToken } from '../../utils/localStorage';
 import { Modal } from '../modal/Modal';
-import { NewBoardForm } from '../newBoardForm/NewBoardForm';
+import { BoardForm } from '../boardForm/BoardForm';
+import { createBoardTC } from '../../redux/boards-slice';
+import { IBoardFormValue } from '../../models/boards-interfaces';
+import { BoardFormKeyWords } from '../../enums/enums';
 
 export const Header = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
-    const { isAuth } = useAppSelector(state => state.auth);
 
     const [modalActive, setModalActive] = useState<boolean>(false);
+
+    const { isAuth } = useAppSelector(state => state.auth);
+    const userId = useAppSelector(state => state.auth.id);
 
     const handleLogOut = (): void => {
         dispatch(setIsAuth({ value: false }));
@@ -20,8 +25,14 @@ export const Header = () => {
         removeToken();
     };
 
-    const handleModal = () => {
-        setModalActive(true);
+    const handleCreateBoard = (data: IBoardFormValue) => {
+        if (userId) {
+            dispatch(createBoardTC({ title: data.title, userId }));
+        }
+    };
+
+    const handleModal = (status: boolean) => {
+        setModalActive(status);
     };
 
     return (
@@ -52,9 +63,9 @@ export const Header = () => {
                                     className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}`
                                         : styles.link}> Boards
                                 </NavLink>
-                                <div onClick={handleModal}> Create new board</div>
+                                <div onClick={() =>  handleModal(true)}> Create new board</div>
                                 <Modal active={modalActive} setActive={setModalActive}>
-                                    <NewBoardForm />
+                                    <BoardForm submitAction={handleCreateBoard} closeWindow={handleModal} keyWord={BoardFormKeyWords.CREATE} />
                                 </Modal>
                                 <div onClick={() => console.log('lang')}>en / ru</div>
                                 <NavLink

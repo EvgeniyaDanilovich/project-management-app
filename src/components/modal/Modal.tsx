@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 import './Modal.css';
+import { resetCurrentBoardTitle } from '../../redux/boards-slice';
+import { useAppDispatch } from '../../hooks/redux';
 
 export interface ModalProps {
     active: boolean;
@@ -8,10 +10,17 @@ export interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ active, setActive, children }) => {
+    const dispatch = useAppDispatch();
+
+    const closeModal = () =>{
+        setActive(false);
+        dispatch(resetCurrentBoardTitle());
+    }
 
     return (
-        <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
-            <div className={active ? 'modal__content active' : 'modal__content'} onClick={(e) => e.stopPropagation()}>
+        <div className={active ? 'modal active' : 'modal'} onClick={closeModal}>
+            <div className={active ? 'modal__content active' : 'modal__content'}
+                 onClick={(e) => e.stopPropagation()}>
                 {children}
             </div>
         </div>

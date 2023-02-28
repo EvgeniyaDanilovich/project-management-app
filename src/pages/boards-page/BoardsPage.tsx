@@ -1,28 +1,28 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { createBoardTC, getBoardsTC } from '../../redux/boards-slice';
+import { getAllBoardsByUserIdTC } from '../../redux/boards-slice';
+import { Board } from '../../components/board/Board';
 
 export const BoardsPage = () => {
     const dispatch = useAppDispatch();
+    const { isAuth } = useAppSelector(state => state.auth);
     const { boards } = useAppSelector(state => state.boards);
-    const userId = useAppSelector(state => state.auth.id);
+    const userId  = useAppSelector(state => state.auth.id);
 
     useEffect(() => {
-        dispatch(getBoardsTC());
-    }, []);
-
-    const handleClick = () => {
         if (userId) {
-            dispatch(createBoardTC({ title: 'done', userId }));
+            dispatch(getAllBoardsByUserIdTC(userId));
         }
-    };
+    }, [isAuth]);
 
     return (
         <div>
-            <div>{boards.map(board => {
-                return <div key={board._id}>{board.title}</div>;
-            })}</div>
-            <div style={{cursor: 'pointer'}} onClick={handleClick}>add bord</div>
+            {!!boards[0] ?
+                <div>{boards.map(board => {
+                    return <div key={board._id}><Board title={board.title} boardId={board._id}/> </div>;
+                })}</div>
+                : <div>You don't have boards</div>
+            }
         </div>
     );
 };

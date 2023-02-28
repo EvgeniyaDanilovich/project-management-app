@@ -1,9 +1,15 @@
+export interface User {
+    _id:	string
+    name:	string
+    login:	string
+}
+
 export interface AuthInitState {
     id: null | string,
     name: null | string,
     login: null | string,
     token: null | string,
-    isAuth: boolean
+    isAuth: Boolean
 }
 
 export interface IsAuthValue {
