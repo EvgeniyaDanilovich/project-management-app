@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { boardsAPI } from '../api/boards-api';
-import { Board, IBoardInitState, ICreateBoardData, ICurrentBoardTitle, IUpdateBoardData } from '../models/boards-interfaces';
+import { IBoardInitState, ICreateBoardData, ICurrentBoardId, ICurrentBoardTitle, IUpdateBoardData } from '../models/boards-interfaces';
 
 const initialBoardsState: IBoardInitState = {
     boards: [],
     currentBoardTitle: '',
-    isPersist: false
+    currentBoardId: '',
 };
 
 export const getAllBoardsTC = createAsyncThunk(
@@ -47,7 +47,7 @@ const BoardsSlice = createSlice({
     name: 'boards',
     initialState: initialBoardsState,
     reducers: {
-        setCurrentBoardTitle(state, action: PayloadAction<ICurrentBoardTitle>) {
+        setCurrentBoardTitle(state, action: PayloadAction<ICurrentBoardId>) {
             state.boards.find(board => {
                 if (board._id === action.payload.boardId) {
                     state.currentBoardTitle = board.title;
@@ -57,6 +57,10 @@ const BoardsSlice = createSlice({
 
         resetCurrentBoardTitle(state) {
             state.currentBoardTitle = '';
+        },
+
+        setCurrentBoardId(state, action: PayloadAction<ICurrentBoardId>){
+            state.currentBoardId = action.payload.boardId;
         }
     },
     extraReducers: (builder) => {
@@ -68,10 +72,8 @@ const BoardsSlice = createSlice({
 
         builder.addCase(createBoardTC.fulfilled, (state, { payload }) => {
             if (payload) {
-                console.log(payload);
                 // @ts-ignore
                 state.boards.push(payload);
-                state.isPersist = true;
             }
         });
 
@@ -103,5 +105,5 @@ const BoardsSlice = createSlice({
     }
 });
 
-export const { setCurrentBoardTitle, resetCurrentBoardTitle } = BoardsSlice.actions;
+export const { setCurrentBoardTitle, resetCurrentBoardTitle, setCurrentBoardId } = BoardsSlice.actions;
 export default BoardsSlice.reducer;

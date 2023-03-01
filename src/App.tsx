@@ -9,6 +9,7 @@ import { BoardsPage } from './pages/boards-page/BoardsPage';
 import { getToken, getUserId } from './utils/localStorage';
 import { setIsAuth, setStateUserId } from './redux/auth-slice';
 import { useAppDispatch } from './hooks/redux';
+import { BoardPage } from './pages/board-page/BoardPage';
 
 function App() {
     const dispatch = useAppDispatch();
@@ -31,6 +32,7 @@ function App() {
                     <Route path="login" element={<SignIn />} />
                     <Route path="sign-up" element={<SignUp />} />
                     <Route path="boards" element={<BoardsPage />} />
+                    <Route path="board/:boardId" element={<BoardPage />} />
                 </Route>
                 <Route path="*" element={<div>Not found 404</div>} />
             </Routes>

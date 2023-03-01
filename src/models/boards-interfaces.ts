@@ -10,10 +10,10 @@ export interface Board {
 export interface IBoardInitState {
     boards: Board[];
     currentBoardTitle: string;
-    isPersist: boolean
+    currentBoardId: string;
 }
 
-export interface IBoardFormValue {
+export interface ICreateUpdateFormValue {
     title: string;
     // description: string
 }
@@ -34,8 +34,18 @@ export interface ICurrentBoardTitle {
     boardId: string
 }
 
-export interface BoardFormProps {
-    submitAction: (data: IBoardFormValue) => void;
+export interface ICurrentBoardId {
+    boardId: string
+}
+
+export interface CreateUpdateFormProps {
+    submitAction: (data: ICreateUpdateFormValue) => void;
     closeWindow: (status: boolean) => void;
-    keyWord: string
+    title: string;
+    actionType: string
+}
+
+export interface BoardProps {
+    title: string;
+    boardId: string;
 }

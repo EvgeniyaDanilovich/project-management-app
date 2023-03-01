@@ -5,10 +5,10 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setIsAuth } from '../../redux/auth-slice';
 import { removeToken } from '../../utils/localStorage';
 import { Modal } from '../modal/Modal';
-import { BoardForm } from '../boardForm/BoardForm';
+import { CreateUpdateForm } from '../createUpdateForm/CreateUpdateForm';
 import { createBoardTC } from '../../redux/boards-slice';
-import { IBoardFormValue } from '../../models/boards-interfaces';
-import { BoardFormKeyWords } from '../../enums/enums';
+import { ICreateUpdateFormValue } from '../../models/boards-interfaces';
+import { CreateUpdateFormAction, CreateUpdateFormTitles } from '../../enums/enums';
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -25,14 +25,10 @@ export const Header = () => {
         removeToken();
     };
 
-    const handleCreateBoard = (data: IBoardFormValue) => {
+    const handleCreateBoard = (data: ICreateUpdateFormValue) => {
         if (userId) {
             dispatch(createBoardTC({ title: data.title, userId }));
         }
-    };
-
-    const handleModal = (status: boolean) => {
-        setModalActive(status);
     };
 
     return (
@@ -63,9 +59,12 @@ export const Header = () => {
                                     className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}`
                                         : styles.link}> Boards
                                 </NavLink>
-                                <div onClick={() =>  handleModal(true)}> Create new board</div>
+                                <div onClick={() => setModalActive(true)}> Create new board</div>
                                 <Modal active={modalActive} setActive={setModalActive}>
-                                    <BoardForm submitAction={handleCreateBoard} closeWindow={handleModal} keyWord={BoardFormKeyWords.CREATE} />
+                                    <CreateUpdateForm submitAction={handleCreateBoard} closeWindow={setModalActive}
+                                                      title={CreateUpdateFormTitles.CREATE_BOARD}
+                                                      actionType={CreateUpdateFormAction.CREATE}
+                                    />
                                 </Modal>
                                 <div onClick={() => console.log('lang')}>en / ru</div>
                                 <NavLink

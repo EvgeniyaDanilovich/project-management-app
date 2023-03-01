@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth-slice';
 import boardsReducer from './boards-slice';
+import columnsReducer from './columns-slice';
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    boards: boardsReducer
+    boards: boardsReducer,
+    columns: columnsReducer
 });
 
 export const store = configureStore({

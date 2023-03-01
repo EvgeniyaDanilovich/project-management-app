@@ -1,22 +1,19 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { BoardFormProps, IBoardFormValue } from '../../models/boards-interfaces';
-import { resetCurrentBoardTitle } from '../../redux/boards-slice';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { CreateUpdateFormProps, ICreateUpdateFormValue } from '../../models/boards-interfaces';
+import { useAppSelector } from '../../hooks/redux';
 
-export const BoardForm: React.FC<BoardFormProps> = ({ submitAction, closeWindow, keyWord }) => {
-    const dispatch = useAppDispatch();
+export const CreateUpdateForm: React.FC<CreateUpdateFormProps> = ({ submitAction, closeWindow, title, actionType }) => {
     const { currentBoardTitle } = useAppSelector(state => state.boards);
     const userId = useAppSelector(state => state.auth.id);
 
-    const { register, handleSubmit, reset, formState: { errors, isValid } } = useForm<IBoardFormValue>({
+    const { register, handleSubmit, reset, formState: { errors, isValid } } = useForm<ICreateUpdateFormValue>({
         mode: 'onChange'
     });
 
-    const onSubmit: SubmitHandler<IBoardFormValue> = (data) => {
+    const onSubmit: SubmitHandler<ICreateUpdateFormValue> = (data) => {
         if (userId && data.title) {
             submitAction(data);
-            dispatch(resetCurrentBoardTitle())
             reset();
             closeWindow(false);
         }
@@ -24,25 +21,25 @@ export const BoardForm: React.FC<BoardFormProps> = ({ submitAction, closeWindow,
 
     return (
         <>
-            <h3>{keyWord} board</h3>
+            <h3>{title} board</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <input type={'text'} {...register('title', {
                         required: 'Enter text please',
                         minLength: { value: 3, message: 'Min length is 3 symbols' }
-                    })} placeholder={'Board title'} defaultValue={currentBoardTitle} autoFocus={true} />
+                    })} placeholder={'Title'} defaultValue={currentBoardTitle} autoFocus={true} />
                     {errors?.title && <p>{errors?.title.message}</p>}
                 </div>
                 {/* <div> */}
                 {/*     <input type={'text'} {...register('description', { */}
-                {/*         required: 'Enter text please', */}
+                {/*         required: 'Enter description', */}
                 {/*         minLength: { value: 3, message: 'Min length is 3 symbols' } */}
                 {/*     })} placeholder={'Board description'} /> */}
                 {/*     {errors?.description && <p>{errors?.description.message}</p>} */}
                 {/* </div> */}
 
                 <div>
-                    <button disabled={!isValid}>{keyWord}</button>
+                    <button disabled={!isValid}>{actionType}</button>
                 </div>
             </form>
         </>
