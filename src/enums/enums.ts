@@ -16,3 +16,14 @@ export enum CreateUpdateFormAction {
     UPDATE = 'Update'
 }
 
+
+export enum ItemType {
+    BOARDS = 'Boards',
+    COLUMNS = 'Column'
+}
+
+export enum DeletedTypeItem {
+    BOARD = 'board',
+    COLUMN = 'column'
+}
+

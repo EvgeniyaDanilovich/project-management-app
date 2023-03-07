@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { CreateUpdateFormProps, ICreateUpdateFormValue } from '../../models/boards-interfaces';
+import {  ICreateUpdateFormValue } from '../../models/boards-interfaces';
 import { useAppSelector } from '../../hooks/redux';
+import { ItemType } from '../../enums/enums';
+import { CreateUpdateFormProps } from '../../models/forms-interfaces';
 
-export const CreateUpdateForm: React.FC<CreateUpdateFormProps> = ({ submitAction, closeWindow, title, actionType }) => {
-    const { currentBoardTitle } = useAppSelector(state => state.boards);
+export const CreateUpdateForm: React.FC<CreateUpdateFormProps> = (
+    { submitAction, closeWindow, title, actionType, page }) => {
+
+    const [updatedTitle, setUpdatedTitle] = useState('');
+
+    const { updatedBoardTitle } = useAppSelector(state => state.boards);
+    const { updatedColumnTitle } = useAppSelector(state => state.columns);
+
     const userId = useAppSelector(state => state.auth.id);
+
+    useEffect(()=>{
+        if (page === ItemType.BOARDS) {
+                setUpdatedTitle(updatedBoardTitle);
+        } else if (page === ItemType.COLUMNS) {
+            setUpdatedTitle(updatedColumnTitle);
+        }
+    },[updatedBoardTitle, updatedColumnTitle])
 
     const { register, handleSubmit, reset, formState: { errors, isValid } } = useForm<ICreateUpdateFormValue>({
         mode: 'onChange'
@@ -21,13 +37,13 @@ export const CreateUpdateForm: React.FC<CreateUpdateFormProps> = ({ submitAction
 
     return (
         <>
-            <h3>{title} board</h3>
+            <h3>{title}</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <input type={'text'} {...register('title', {
                         required: 'Enter text please',
                         minLength: { value: 3, message: 'Min length is 3 symbols' }
-                    })} placeholder={'Title'} defaultValue={currentBoardTitle} autoFocus={true} />
+                    })} placeholder={'Title'} defaultValue={updatedTitle} autoFocus={true} />
                     {errors?.title && <p>{errors?.title.message}</p>}
                 </div>
                 {/* <div> */}

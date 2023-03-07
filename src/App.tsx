@@ -6,8 +6,8 @@ import { WelcomePage } from './pages/welcome-page/WelcomePage';
 import { SignUp } from './pages/sign-up/SignUp';
 import { SignIn } from './pages/sign-in/SignIn';
 import { BoardsPage } from './pages/boards-page/BoardsPage';
-import { getToken, getUserId } from './utils/localStorage';
-import { setIsAuth, setStateUserId } from './redux/auth-slice';
+import { getToken, getUserId, setToken } from './utils/localStorage';
+import { setIsAuth, setStateUserId, setTokenState } from './redux/auth-slice';
 import { useAppDispatch } from './hooks/redux';
 import { BoardPage } from './pages/board-page/BoardPage';
 
@@ -18,9 +18,13 @@ function App() {
         const isAuth = getToken();
         isAuth ? dispatch(setIsAuth({ value: true })) : dispatch(setIsAuth({ value: false }));
 
+        if (isAuth) {
+            dispatch(setTokenState({ token: isAuth }));
+        }
+
         const userId = getUserId();
-        if(userId){
-            dispatch(setStateUserId({ id: userId }))
+        if (userId) {
+            dispatch(setStateUserId({ id: userId }));
         }
     }, []);
 

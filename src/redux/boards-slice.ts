@@ -4,8 +4,9 @@ import { IBoardInitState, ICreateBoardData, ICurrentBoardId, ICurrentBoardTitle,
 
 const initialBoardsState: IBoardInitState = {
     boards: [],
+    updatedBoardTitle: '',
     currentBoardTitle: '',
-    currentBoardId: '',
+    // currentBoardId: '',
 };
 
 export const getAllBoardsTC = createAsyncThunk(
@@ -21,6 +22,14 @@ export const getAllBoardsByUserIdTC = createAsyncThunk(
         return await boardsAPI.getAllBoardsByUserId(userId);
     }
 );
+
+export const getBoardById = createAsyncThunk(
+    'boards/getBoardById',
+    async (boardId: string) => {
+        return await boardsAPI.getBoardById(boardId);
+    }
+);
+
 
 export const createBoardTC = createAsyncThunk(
     'boards/createBoard',
@@ -47,63 +56,67 @@ const BoardsSlice = createSlice({
     name: 'boards',
     initialState: initialBoardsState,
     reducers: {
-        setCurrentBoardTitle(state, action: PayloadAction<ICurrentBoardId>) {
+        setUpdatedBoardTitle(state, action: PayloadAction<ICurrentBoardId>) {
             state.boards.find(board => {
                 if (board._id === action.payload.boardId) {
-                    state.currentBoardTitle = board.title;
+                    state.updatedBoardTitle = board.title;
                 }
             });
         },
 
-        resetCurrentBoardTitle(state) {
-            state.currentBoardTitle = '';
-        },
-
-        setCurrentBoardId(state, action: PayloadAction<ICurrentBoardId>){
-            state.currentBoardId = action.payload.boardId;
+        resetUpdatedBoardTitle(state) {
+            state.updatedBoardTitle = '';
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(getAllBoardsTC.fulfilled, (state, { payload }) => {
-            if (payload) {
-                state.boards = payload;
-            }
-        });
+        builder
+            .addCase(getAllBoardsTC.fulfilled, (state, { payload }) => {
+                if (payload) {
+                    state.boards = payload;
+                }
+            })
 
-        builder.addCase(createBoardTC.fulfilled, (state, { payload }) => {
-            if (payload) {
-                // @ts-ignore
-                state.boards.push(payload);
-            }
-        });
+            .addCase(getAllBoardsByUserIdTC.fulfilled, (state, { payload }) => {
+                if (payload) {
+                    state.boards = payload;
+                }
+            })
 
-        builder.addCase(getAllBoardsByUserIdTC.fulfilled, (state, { payload }) => {
-            if (payload) {
-                state.boards = payload;
-            }
-        });
+            .addCase(getBoardById.fulfilled, (state, { payload }) => {
+                if (payload) {
+                    state.currentBoardTitle = payload.title;
+                }
+            })
 
-        builder.addCase(updateBoard.fulfilled, (state, { payload }) => {
-            if (payload) {
-                state.boards.find((board) => {
-                    if (board._id === payload._id) {
-                        board.title = payload.title;
-                    }
-                });
-            }
-        });
+            .addCase(createBoardTC.fulfilled, (state, { payload }) => {
+                if (payload) {
+                    // @ts-ignore
+                    state.boards.push(payload);
+                }
+            })
 
-        builder.addCase(removeBoard.fulfilled, (state, { payload }) => {
-            if (payload) {
-                const index =  state.boards.findIndex((board) => {
-                    return board._id === payload._id
-                })
 
-                state.boards.splice(index, 1);
-            }
-        });
+            .addCase(updateBoard.fulfilled, (state, { payload }) => {
+                if (payload) {
+                    state.boards.find((board) => {
+                        if (board._id === payload._id) {
+                            board.title = payload.title;
+                        }
+                    });
+                }
+            })
+
+            .addCase(removeBoard.fulfilled, (state, { payload }) => {
+                if (payload) {
+                    const index = state.boards.findIndex((board) => {
+                        return board._id === payload._id;
+                    });
+
+                    state.boards.splice(index, 1);
+                }
+            });
     }
 });
 
-export const { setCurrentBoardTitle, resetCurrentBoardTitle, setCurrentBoardId } = BoardsSlice.actions;
+export const { setUpdatedBoardTitle, resetUpdatedBoardTitle } = BoardsSlice.actions;
 export default BoardsSlice.reducer;

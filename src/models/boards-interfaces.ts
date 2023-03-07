@@ -9,8 +9,9 @@ export interface Board {
 
 export interface IBoardInitState {
     boards: Board[];
+    updatedBoardTitle: string;
     currentBoardTitle: string;
-    currentBoardId: string;
+    // currentBoardId: string;
 }
 
 export interface ICreateUpdateFormValue {
@@ -31,18 +32,11 @@ export interface ICreateBoardData {
 }
 
 export interface ICurrentBoardTitle {
-    boardId: string
+    title: string
 }
 
 export interface ICurrentBoardId {
     boardId: string
-}
-
-export interface CreateUpdateFormProps {
-    submitAction: (data: ICreateUpdateFormValue) => void;
-    closeWindow: (status: boolean) => void;
-    title: string;
-    actionType: string
 }
 
 export interface BoardProps {

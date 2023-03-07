@@ -6,11 +6,28 @@ export interface Column {
 }
 
 export interface IColumnInitState{
-    columns: Column[]
+    columns: Column[],
+    updatedColumnTitle: string
 }
 
 export interface ColumnData {
     boardId: string,
     title: string,
     order: number
+}
+
+export interface UpdateColumnData{
+    boardId: string,
+    columnId: string,
+    title: string,
+    order: number
+}
+
+export interface DeleteColumnData{
+    boardId: string,
+    columnId: string
+}
+
+export interface ICurrentColumnId{
+    columnId: string;
 }

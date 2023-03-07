@@ -8,7 +8,7 @@ import { Modal } from '../modal/Modal';
 import { CreateUpdateForm } from '../createUpdateForm/CreateUpdateForm';
 import { createBoardTC } from '../../redux/boards-slice';
 import { ICreateUpdateFormValue } from '../../models/boards-interfaces';
-import { CreateUpdateFormAction, CreateUpdateFormTitles } from '../../enums/enums';
+import { CreateUpdateFormAction, CreateUpdateFormTitles, ItemType } from '../../enums/enums';
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -64,6 +64,7 @@ export const Header = () => {
                                     <CreateUpdateForm submitAction={handleCreateBoard} closeWindow={setModalActive}
                                                       title={CreateUpdateFormTitles.CREATE_BOARD}
                                                       actionType={CreateUpdateFormAction.CREATE}
+                                                      page={ItemType.BOARDS}
                                     />
                                 </Modal>
                                 <div onClick={() => console.log('lang')}>en / ru</div>

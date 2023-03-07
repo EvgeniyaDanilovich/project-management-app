@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { authAPI } from '../api/auth-api';
-import { AuthInitState, IsAuthValue, IUserId } from '../models/auth-interfaces';
+import { AuthInitState, IsAuthValue, IToken, IUserId } from '../models/auth-interfaces';
 import { ISignInFormValues, ISignUpFormValues } from '../models/forms-interfaces';
 import { ISignInResponse, ISignUpResponse } from '../models/api-interfaces';
 import { setToken, setUserId } from '../utils/localStorage';
@@ -45,6 +45,9 @@ const AuthSlice = createSlice({
         },
         setStateUserId(state, action: PayloadAction<IUserId>) {
             state.id = action.payload.id;
+        },
+        setTokenState(state, action: PayloadAction<IToken>){
+            state.token = action.payload.token
         }
     },
     extraReducers: {
@@ -71,7 +74,7 @@ const AuthSlice = createSlice({
     // }
 });
 
-export const { setIsAuth, setStateUserId } = AuthSlice.actions;
+export const { setIsAuth, setStateUserId, setTokenState } = AuthSlice.actions;
 export default AuthSlice.reducer;
 
 

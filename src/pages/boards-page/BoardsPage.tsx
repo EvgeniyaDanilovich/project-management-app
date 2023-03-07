@@ -13,7 +13,7 @@ export const BoardsPage = () => {
         if (userId) {
             dispatch(getAllBoardsByUserIdTC(userId));
         }
-    }, [isAuth]);
+    }, [userId]);
 
     return (
         <div>

@@ -19,3 +19,7 @@ export interface IsAuthValue {
 export interface IUserId {
     id: string;
 }
+
+export interface IToken{
+    token: string;
+}

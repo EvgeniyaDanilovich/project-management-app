@@ -20,7 +20,10 @@ export const boardsAPI = {
     },
 
     async getBoardById(boardId: string) {
-        await instance.get<Board>(`boards/${boardId}`);
+        const response  = await instance.get<Board>(`boards/${boardId}`);
+        if (response.status === ResultCodes.SUCCESS && response) {
+            return response.data;
+        }
     },
 
     async createBoard(title: string, owner: string, users: string[]) {
