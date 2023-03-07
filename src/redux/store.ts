@@ -2,11 +2,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth-slice';
 import boardsReducer from './boards-slice';
 import columnsReducer from './columns-slice';
+import taskReducer from './task-slice';
 
 const rootReducer = combineReducers({
     auth: authReducer,
     boards: boardsReducer,
-    columns: columnsReducer
+    columns: columnsReducer,
+    task: taskReducer,
 });
 
 export const store = configureStore({
