@@ -1,13 +1,14 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { taskAPI } from '../api/task-api';
-import { createTaskThunkData, Task, TaskByIdThunkData, TaskThunkData, UpdateTaskThunkData } from '../models/task-interfaces';
-
-export interface IInitTaskState {
-    tasks: Task[];
-}
+import { createTaskThunkData, IInitTaskState, ITaskId, TaskByIdThunkData, TaskThunkData, UpdateTaskThunkData } from '../models/task-interfaces';
+import { ICreateUpdateFormValue } from '../models/forms-interfaces';
 
 const initTaskState: IInitTaskState = {
-    tasks: []
+    tasks: [],
+    currentTaskTitle: '',
+    currentTaskDescription: '',
+    // updatedTaskTitle: '',
+    // updatedTaskDescription: '',
 };
 
 export const getTasksInColumn = createAsyncThunk(
@@ -48,26 +49,69 @@ export const deleteTask = createAsyncThunk(
 const TaskSlice = createSlice({
         name: 'task',
         initialState: initTaskState,
-        reducers: {},
+        reducers: {
+            resetTasks(state) {
+                state.tasks = [];
+            },
+
+            setCurrentTaskData(state, action: PayloadAction<ICreateUpdateFormValue>) {
+                state.currentTaskTitle = action.payload.title;
+                if (action.payload.description) {
+                    state.currentTaskDescription = action.payload.description;
+                }
+            },
+            // setUpdatedTaskData(state, action: PayloadAction<ITaskId>) {
+            //     state.tasks.map(task => {
+            //         if (task._id === action.payload.taskId) {
+            //             state.updatedTaskTitle = task.title;
+            //             if (task.description) {
+            //                 state.updatedTaskDescription = task.description;
+            //             }
+            //         }
+            //     });
+            // },
+            // resetUpdatedTaskData(state) {
+            //     state.updatedTaskTitle = '';
+            //     state.updatedTaskDescription = '';
+            // }
+        },
         extraReducers: (builder) => {
             builder
                 .addCase(getTasksInColumn.fulfilled, (state, { payload }) => {
-
+                    if (payload) {
+                        state.tasks = [...state.tasks, ...payload];
+                    }
                 })
                 .addCase(createTask.fulfilled, (state, { payload }) => {
-
+                    if (payload) {
+                        state.tasks.push(payload);
+                    }
                 })
                 .addCase(getTaskById.fulfilled, (state, { payload }) => {
 
                 })
                 .addCase(updateTask.fulfilled, (state, { payload }) => {
+                    if (payload) {
+                        const index = state.tasks.findIndex(task => {
+                            return task._id === payload._id;
+                        });
 
+                        state.tasks[index].title = payload.title;
+                        state.tasks[index].description = payload.description;
+                    }
                 })
                 .addCase(deleteTask.fulfilled, (state, { payload }) => {
+                    const index = state.tasks.findIndex(task => {
+                        if (payload) {
+                            return task._id === payload._id;
+                        }
+                    });
 
+                    state.tasks.splice(index, 1);
                 });
         }
     }
 );
 
+export const { resetTasks } = TaskSlice.actions;
 export default TaskSlice.reducer;

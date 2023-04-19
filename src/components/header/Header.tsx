@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { setIsAuth } from '../../redux/auth-slice';
-import { removeToken } from '../../utils/localStorage';
+import { resetUserData, setIsAuth, setStateUserId, setTokenState } from '../../redux/auth-slice';
+import { getToken, getUserId, removeToken } from '../../utils/localStorage';
 import { Modal } from '../modal/Modal';
-import { CreateUpdateForm } from '../createUpdateForm/CreateUpdateForm';
+import { CreateForm } from '../createUpdateForm/CreateForm';
 import { createBoardTC } from '../../redux/boards-slice';
-import { ICreateUpdateFormValue } from '../../models/boards-interfaces';
-import { CreateUpdateFormAction, CreateUpdateFormTitles, ItemType } from '../../enums/enums';
+import { CreateUpdateFormTitles, ItemType } from '../../enums/enums';
+import { ICreateUpdateFormValue } from '../../models/forms-interfaces';
+import { ReactComponent as Logo } from '../../assets/images/logo.svg';
+
+// className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}` : styles.link}
+//({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}`
+//                                         : styles.link
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -21,8 +26,21 @@ export const Header = () => {
 
     const handleLogOut = (): void => {
         dispatch(setIsAuth({ value: false }));
+        dispatch(resetUserData());
         navigate('/');
         removeToken();
+    };
+
+    const onSignIn = () => {
+        const token = getToken();
+        const id = getUserId();
+
+        if (token) {
+            dispatch(setTokenState({ token }));
+        }
+        if (userId) {
+            dispatch(setStateUserId({ id }));
+        }
     };
 
     const handleCreateBoard = (data: ICreateUpdateFormValue) => {
@@ -38,18 +56,16 @@ export const Header = () => {
                     <nav data-testid="navbar" className={styles.navbar}>
                         <NavLink to="/"
                                  className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}`
-                                     : styles.link}>Welcome
+                                     : styles.link}><Logo />
                         </NavLink>
                         {!isAuth ?
                             <div>
-                                <NavLink to="/sign-up"
-                                         className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}`
-                                             : styles.link}> Sign up
-                                </NavLink>
                                 <NavLink
-                                    to="/login"
-                                    className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}`
-                                        : styles.link}> Sign in
+                                    to="/login" onClick={onSignIn}
+                                    className={styles.auth_btn}> Sign in
+                                </NavLink>
+                                <NavLink to="/sign-up" className={`${styles.auth_btn} ${styles.auth_btn__b}`} >
+                                    Sign up
                                 </NavLink>
                             </div>
                             // : <div onClick={() => <Navigate to={'/'} />}>Log out</div>
@@ -61,18 +77,17 @@ export const Header = () => {
                                 </NavLink>
                                 <div onClick={() => setModalActive(true)}> Create new board</div>
                                 <Modal active={modalActive} setActive={setModalActive}>
-                                    <CreateUpdateForm submitAction={handleCreateBoard} closeWindow={setModalActive}
-                                                      title={CreateUpdateFormTitles.CREATE_BOARD}
-                                                      actionType={CreateUpdateFormAction.CREATE}
-                                                      page={ItemType.BOARDS}
+                                    <CreateForm submitAction={handleCreateBoard} closeWindow={setModalActive}
+                                                title={CreateUpdateFormTitles.CREATE_BOARD}
+                                                page={ItemType.BOARDS}
                                     />
                                 </Modal>
-                                <div onClick={() => console.log('lang')}>en / ru</div>
-                                <NavLink
-                                    to="/"
-                                    className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}`
-                                        : styles.link}> Edit profile
-                                </NavLink>
+                                {/* <div onClick={() => console.log('lang')}>en / ru</div> */}
+                                {/* <NavLink */}
+                                {/*     to="/" */}
+                                {/*     className={({ isActive }) => isActive ? `${styles.activeHeaderLink} ${styles.link}` */}
+                                {/*         : styles.link}> Edit profile */}
+                                {/* </NavLink> */}
                                 <div onClick={handleLogOut}>Log out</div>
                             </div>
                         }

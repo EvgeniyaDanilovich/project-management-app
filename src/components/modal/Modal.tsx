@@ -1,8 +1,5 @@
 import React, { ReactNode } from 'react';
 import './Modal.css';
-import { resetUpdatedBoardTitle } from '../../redux/boards-slice';
-import { useAppDispatch } from '../../hooks/redux';
-import { resetUpdatedColumnTitle } from '../../redux/columns-slice';
 
 export interface ModalProps {
     active: boolean;
@@ -11,12 +8,8 @@ export interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ active, setActive, children }) => {
-    const dispatch = useAppDispatch();
-
     const closeModal = () =>{
         setActive(false);
-        dispatch(resetUpdatedBoardTitle());
-        dispatch(resetUpdatedColumnTitle());
     }
 
     return (

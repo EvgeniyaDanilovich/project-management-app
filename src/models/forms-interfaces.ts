@@ -1,5 +1,3 @@
-import { ICreateUpdateFormValue } from './boards-interfaces';
-
 export interface ISignUpFormValues {
     name: string;
     login: string;
@@ -14,8 +12,12 @@ export interface CreateUpdateFormProps {
     submitAction: (data: ICreateUpdateFormValue) => void;
     closeWindow: (status: boolean) => void;
     title: string;
-    actionType: string,
     page: string
+}
+
+export interface ICreateUpdateFormValue {
+    title: string;
+    description?: string
 }
 
 export interface DeleteConfirmFormProps {

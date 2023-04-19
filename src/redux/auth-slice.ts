@@ -44,11 +44,18 @@ const AuthSlice = createSlice({
             state.isAuth = action.payload.value;
         },
         setStateUserId(state, action: PayloadAction<IUserId>) {
-            state.id = action.payload.id;
+            if (action.payload.id) {
+                state.id = action.payload.id;
+            }
         },
-        setTokenState(state, action: PayloadAction<IToken>){
-            state.token = action.payload.token
-        }
+        setTokenState(state, action: PayloadAction<IToken>) {
+            state.token = action.payload.token;
+        },
+        resetUserData(state) {
+            state.token = '';
+            state.login = '';
+        },
+
     },
     extraReducers: {
         [singInTC.fulfilled.type]: (state, action: PayloadAction<ISignInResponse>) => {
@@ -74,7 +81,7 @@ const AuthSlice = createSlice({
     // }
 });
 
-export const { setIsAuth, setStateUserId, setTokenState } = AuthSlice.actions;
+export const { setIsAuth, setStateUserId, setTokenState, resetUserData } = AuthSlice.actions;
 export default AuthSlice.reducer;
 
 

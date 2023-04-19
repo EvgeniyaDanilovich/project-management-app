@@ -11,19 +11,15 @@ export enum CreateUpdateFormTitles {
     UPDATE_TASK = 'Update task',
 }
 
-export enum CreateUpdateFormAction {
-    CREATE = 'Create',
-    UPDATE = 'Update'
-}
-
-
 export enum ItemType {
     BOARDS = 'Boards',
-    COLUMNS = 'Column'
+    COLUMNS = 'Column',
+    TASK = 'Task'
 }
 
 export enum DeletedTypeItem {
     BOARD = 'board',
-    COLUMN = 'column'
+    COLUMN = 'column',
+    TASK = 'task',
 }
 

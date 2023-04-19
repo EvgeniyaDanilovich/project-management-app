@@ -11,7 +11,7 @@ export interface ISignInResponse {
 export interface createTaskData {
     title: string;
     order: number;
-    description: string;
-    userId: string;
+    description: string | undefined;
+    userId: string | null;
     users: string[];
 }

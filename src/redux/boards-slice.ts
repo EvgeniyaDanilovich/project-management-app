@@ -6,7 +6,6 @@ const initialBoardsState: IBoardInitState = {
     boards: [],
     updatedBoardTitle: '',
     currentBoardTitle: '',
-    // currentBoardId: '',
 };
 
 export const getAllBoardsTC = createAsyncThunk(
@@ -95,14 +94,9 @@ const BoardsSlice = createSlice({
                 }
             })
 
-
             .addCase(updateBoard.fulfilled, (state, { payload }) => {
                 if (payload) {
-                    state.boards.find((board) => {
-                        if (board._id === payload._id) {
-                            board.title = payload.title;
-                        }
-                    });
+                    state.currentBoardTitle = payload.title;
                 }
             })
 

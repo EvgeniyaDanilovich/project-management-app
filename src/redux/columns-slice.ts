@@ -67,6 +67,7 @@ const ColumnsSlice = createSlice({
             })
             .addCase(updateColumn.fulfilled, (state, { payload }) => {
                 if (payload) {
+                    console.log(state.columns);
                     state.columns.map(column => {
                         if (column._id === payload._id) {
                             column.title = payload.title;

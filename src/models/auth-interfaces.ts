@@ -5,7 +5,7 @@ export interface User {
 }
 
 export interface AuthInitState {
-    id: null | string,
+    id: string,
     name: null | string,
     login: null | string,
     token: null | string,
@@ -17,7 +17,7 @@ export interface IsAuthValue {
 }
 
 export interface IUserId {
-    id: string;
+    id: string | null;
 }
 
 export interface IToken{

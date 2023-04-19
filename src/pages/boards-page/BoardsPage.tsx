@@ -5,7 +5,6 @@ import { Board } from '../../components/board/Board';
 
 export const BoardsPage = () => {
     const dispatch = useAppDispatch();
-    const { isAuth } = useAppSelector(state => state.auth);
     const { boards } = useAppSelector(state => state.boards);
     const userId  = useAppSelector(state => state.auth.id);
 

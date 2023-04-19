@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="81c55708-281d-4f58-9bb8-f239387e8048" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/task/Task.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/taskPreview/TaskPreview.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/task-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/task-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/board/Board.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board/Board.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/column/Column.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/column/Column.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createUpdateForm/CreateUpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createUpdateForm/CreateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/enums.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/api-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/api-interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/auth-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/auth-interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/boards-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/boards-interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/forms-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/forms-interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/task-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/task-interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/board-page/BoardPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/board-page/BoardPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/boards-page/BoardsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/boards-page/BoardsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/boards-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/boards-slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/columns-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/columns-slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/task-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/task-slice.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OanoFGWtrXZxz5Zsl1frrMLHmE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\programming\\rs-react\\project-management-app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81c55708-281d-4f58-9bb8-f239387e8048" name="Changes" comment="" />
+      <created>1681807732628</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681807732628</updated>
+      <workItem from="1681807736142" duration="13413000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

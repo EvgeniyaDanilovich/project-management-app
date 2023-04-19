@@ -14,11 +14,6 @@ export interface IBoardInitState {
     // currentBoardId: string;
 }
 
-export interface ICreateUpdateFormValue {
-    title: string;
-    // description: string
-}
-
 export interface IUpdateBoardData{
     boardId: string,
     title: string,

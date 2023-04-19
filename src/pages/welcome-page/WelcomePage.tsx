@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import styles from './WelcomePage.module.scss';
+import { ReactComponent as Icon1 } from '../../assets/images/main-01.svg';
 
 export const WelcomePage: React.FC = () => {
-    // const store = setupStore()
-
-    // const auth = useAppSelector((state) => state.auth )
-
-    useEffect(()=>{
-        // console.log(auth);
-        // console.log(store.getState());
-    }, [])
 
     return (
         <div>
-            Welcome page
+            <div>
+                <Icon1 />
+                <div className={`${styles.title}`}>Project</div>
+                <div>management</div>
+                <div>software</div>
+                <Icon1 />
+            </div>
+            <div></div>
+            <div></div>
         </div>
     );
 };
