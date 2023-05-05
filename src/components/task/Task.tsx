@@ -6,6 +6,7 @@ import { deleteTask } from '../../redux/task-slice';
 import { TaskProps } from '../../models/task-interfaces';
 import { DeleteConfirmForm } from '../deleteConfirmForm/DeleteConfirmForm';
 import { TaskPreview } from '../taskPreview/TaskPreview';
+import styles from './Task.module.scss'
 
 export const Task: React.FC<TaskProps> = ({ title, boardId, columnId,taskId, description }) => {
     const dispatch = useAppDispatch();
@@ -17,8 +18,8 @@ export const Task: React.FC<TaskProps> = ({ title, boardId, columnId,taskId, des
     }
 
     return (
-        <div>
-            <div onClick={() => setPreviewModal(true)}>{title}</div>
+        <div className={styles.taskWrapper}>
+            <div className={'title18'} onClick={() => setPreviewModal(true)}>{title}</div>
             <Modal active={previewModal} setActive={setPreviewModal}>
                <TaskPreview title={title} description={description} boardId={boardId} columnId={columnId} taskId={taskId}/>
             </Modal>

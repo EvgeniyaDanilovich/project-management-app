@@ -2,35 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81c55708-281d-4f58-9bb8-f239387e8048" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/task/Task.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/taskPreview/TaskPreview.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/column/Column.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/deleteConfirmForm/DeleteConfirmForm.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Layout.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/task/Task.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/boards-page/BoardsPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/sign-in/SignIn.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/buttonBorder/ButtonBorder.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/buttonBorder/ButtonBorder.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/buttonWithoutBorder/ButtonWithoutBorder.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/buttonWithoutBorder/ButtonWithoutBorder.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/cardCreate/CardCreate.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/cardCreate/CardCreate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/task-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/task-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/board/Board.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board/Board.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/board/Board.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board/Board.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/column/Column.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/column/Column.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/column/Column.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createUpdateForm/CreateUpdateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createUpdateForm/CreateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createUpdateForm/CreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createForm/CreateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/deleteConfirmForm/DeleteConfirmForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/deleteConfirmForm/DeleteConfirmForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/Modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/Modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/enums.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/api-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/api-interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/auth-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/auth-interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/boards-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/boards-interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/forms-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/forms-interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/task-interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/task-interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/board-page/BoardPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/board-page/BoardPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/board-page/BoardPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/colunms-page/ColumnsPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/board-page/BoardPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/colunms-page/ColumnsPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/boards-page/BoardsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/boards-page/BoardsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sign-in/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sign-in/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sign-up/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sign-up/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/boards-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/boards-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/columns-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/columns-slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/task-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/task-slice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +54,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2OanoFGWtrXZxz5Zsl1frrMLHmE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,13 +66,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/programming/rs-react/project-management-app/src/ui",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editing.templates",
     "ts.external.directory.path": "D:\\programming\\rs-react\\project-management-app\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programming\rs-react\project-management-app\src\ui" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -85,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681807732628</updated>
-      <workItem from="1681807736142" duration="13413000" />
+      <workItem from="1681807736142" duration="73848000" />
     </task>
     <servers />
   </component>

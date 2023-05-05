@@ -1,0 +1,16 @@
+.btns {
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+}
+
+.btn {
+  padding: 13px 35px;
+  color: #FFFFFF;
+  background-color: #499082;
+  cursor: pointer;
+
+  &__red {
+    background-color: #DB573E;
+  }
+}

@@ -1,0 +1,14 @@
+.borderButton {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 10px 35px;
+  background-color: #D6F164;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover{
+    color: #FFFFFF;
+    background-color: #333333;
+  }
+}

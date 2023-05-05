@@ -1,0 +1,37 @@
+.createCard {
+  min-width: 310px;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  p {
+    margin: 20px 0 0 0;
+    color: #C1C0BD;
+  }
+
+  &:hover{
+    background-color: #ECEDE8;
+
+    p{
+      color: #97958F;
+    }
+
+    .plusMax{
+      path{
+        stroke: #97958F;
+      }
+    }
+  }
+}
+
+.plusMax {
+  width: 20px;
+  height: 20px;
+  & path {
+    stroke: #C1C0BD;
+  }
+}
+
+.minHeight{
+  height: 100px;
+}

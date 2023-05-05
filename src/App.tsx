@@ -9,7 +9,8 @@ import { BoardsPage } from './pages/boards-page/BoardsPage';
 import { getToken, getUserId, setToken } from './utils/localStorage';
 import { setIsAuth, setStateUserId, setTokenState } from './redux/auth-slice';
 import { useAppDispatch } from './hooks/redux';
-import { BoardPage } from './pages/board-page/BoardPage';
+import { ColumnsPage } from './pages/colunms-page/ColumnsPage';
+import { Footer } from './components/footer/Footer';
 
 function App() {
     const dispatch = useAppDispatch();
@@ -36,7 +37,7 @@ function App() {
                     <Route path="login" element={<SignIn />} />
                     <Route path="sign-up" element={<SignUp />} />
                     <Route path="boards" element={<BoardsPage />} />
-                    <Route path="board/:boardId" element={<BoardPage />} />
+                    <Route path="board/:boardId" element={<ColumnsPage />} />
                 </Route>
                 <Route path="*" element={<div>Not found 404</div>} />
             </Routes>

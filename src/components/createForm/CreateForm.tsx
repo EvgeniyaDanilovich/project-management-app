@@ -3,28 +3,13 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppSelector } from '../../hooks/redux';
 import { ItemType } from '../../enums/enums';
 import { CreateUpdateFormProps, ICreateUpdateFormValue } from '../../models/forms-interfaces';
+import { ButtonBorder } from '../../ui/buttonBorder/ButtonBorder';
+import cn from 'classnames';
 
 export const CreateForm: React.FC<CreateUpdateFormProps> = (
     { submitAction, closeWindow, title, page }) => {
 
-    // const [updatedTitle, setUpdatedTitle] = useState('');
-
-    // const { updatedBoardTitle } = useAppSelector(state => state.boards);
-    // const { updatedColumnTitle } = useAppSelector(state => state.columns);
-    // const { updatedTaskTitle } = useAppSelector(state => state.task);
-    // const { updatedTaskDescription } = useAppSelector(state => state.task);
-
     const userId = useAppSelector(state => state.auth.id);
-
-    // useEffect(()=>{
-    //     if (page === ItemType.BOARDS) {
-    //             setUpdatedTitle(updatedBoardTitle);
-    //     } else if (page === ItemType.COLUMNS) {
-    //         // setUpdatedTitle(updatedColumnTitle);
-    //     } else if(page === ItemType.TASK){
-    //         setUpdatedTitle(updatedTaskTitle)
-    //     }
-    // },[updatedBoardTitle, updatedTaskTitle])
 
     const { register, handleSubmit, reset, formState: { errors, isValid } } = useForm<ICreateUpdateFormValue>({
         mode: 'onChange'
@@ -40,30 +25,31 @@ export const CreateForm: React.FC<CreateUpdateFormProps> = (
 
     return (
         <>
-            <h3>{title}</h3>
+            <h3 className={cn('marginBottom25' ,'title30')}>{title}</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
+                <div className={'inputBox'}>
                     <input type={'text'} {...register('title', {
                         required: 'Enter text please',
                         minLength: { value: 3, message: 'Min length is 3 symbols' }
-                    })} placeholder={'Title'} autoFocus={true} />
+                    })} placeholder={'Title'} autoFocus={true} className={'input'} />
                     {errors?.title && <p>{errors?.title.message}</p>}
                 </div>
-`
+
                 {page === ItemType.TASK ?
-                    <div>
+                    <div className={'inputBox'}>
                         <input type={'text'} {...register('description',
                         //     {
                         //     required: 'Enter description',
                         //     minLength: { value: 3, message: 'Min length is 3 symbols' }
                         // }
-                        )} placeholder={'Task description'} />
+                        )} placeholder={'Task description'}  className={'input'}/>
                         {/* {errors?.description && <p>{errors?.description.message}</p>} */}
                     </div> : undefined
                 }
 
                 <div>
-                    <button disabled={!isValid}>Create</button>
+                    <ButtonBorder text={'Create'}  isValid={isValid} />
+                    {/* <button disabled={!isValid}>Create</button> */}
                 </div>
             </form>
         </>

@@ -1,0 +1,17 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  a{
+    border-bottom: 1px solid #333333;
+    //text-decoration: underline;
+    color: #333333;
+  }
+}

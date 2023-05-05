@@ -7,7 +7,7 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(151, 149, 143, 0.5);
     opacity: 0;
     pointer-events: none;
     transition: 0.5s;
@@ -19,10 +19,11 @@
 }
 
 .modal__content {
-    padding: 20px;
-    background-color: #FFFFFF;
-    width: 200px;
-    height: 200px;
+    padding: 35px;
+    width: 400px;
+    /*height: 200px;*/
+    background-color: #FAFAFA;
+    border-radius: 8px;
     transform: scale(0.5);
     transition: 0.4s all;
 }
