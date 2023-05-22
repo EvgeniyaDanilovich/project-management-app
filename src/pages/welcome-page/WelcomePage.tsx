@@ -11,6 +11,8 @@ import { ReactComponent as Technl2 } from '../../assets/images/technl2.svg';
 import { ReactComponent as Technl3 } from '../../assets/images/technl3.svg';
 import { ReactComponent as Technl4 } from '../../assets/images/technl4.svg';
 import Anim1 from '../../assets/images/anim1.jpg';
+import Png1 from '../../assets/images/welcome_1.png';
+import Png2 from '../../assets/images/welcome_2.png';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 
@@ -52,7 +54,7 @@ export const WelcomePage: React.FC = () => {
 
             <section className={`${styles.aboutWrapper} ${styles.wrapperMargin} container`}>
                 <div className={styles.aboutBox}>
-                    <div className={styles.anim}><img src={Anim1} alt="anim" /></div>
+                    <div className={styles.anim}><img src={Png1} alt="anim" /></div>
                     <div className={styles.aboutInfo}>
                         <div className={styles.aboutNumber}>1</div>
                         <div>
@@ -63,7 +65,7 @@ export const WelcomePage: React.FC = () => {
                     </div>
                 </div>
                 <div className={styles.aboutBox}>
-                    <div className={styles.anim}><img src={Anim1} alt="anim" /></div>
+                    <div className={styles.anim}><img src={Png2} alt="anim" /></div>
                     <div className={styles.aboutInfo}>
                         <div className={styles.aboutNumber}>2</div>
                         <div>
