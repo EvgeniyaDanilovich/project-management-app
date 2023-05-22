@@ -11,7 +11,7 @@ import cn from 'classnames';
 export const SignIn: React.FC = () => {
     const dispatch = useAppDispatch();
     const { isAuth } = useAppSelector((state) => state.auth);
-    console.log(isAuth);
+    const { token } = useAppSelector((state) => state.auth);
 
     const { register, handleSubmit, formState: { errors, isValid } } = useForm<ISignInFormValues>({
         mode: 'onChange'
@@ -19,9 +19,11 @@ export const SignIn: React.FC = () => {
 
     if (isAuth) return <Navigate to="/boards" />;
 
-    const onSubmit: SubmitHandler<ISignInFormValues> = (data) => {
-        dispatch(singInTC(data));
+    const onSubmit: SubmitHandler<ISignInFormValues> = async (data) => {
+        const answer =  await dispatch(singInTC(data));
     };
+
+
 
     return (
         <div className={styles.signInPage}>

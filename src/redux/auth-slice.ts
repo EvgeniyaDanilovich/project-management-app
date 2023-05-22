@@ -19,7 +19,6 @@ export const singInTC = createAsyncThunk(
         const response = await authAPI.signIn(data.login, data.password);
         if (response) {
             setToken(response.token);
-            // localStorage.setItem('token', response.token);
         }
         return response;
     }
@@ -60,6 +59,7 @@ const AuthSlice = createSlice({
     extraReducers: {
         [singInTC.fulfilled.type]: (state, action: PayloadAction<ISignInResponse>) => {
             state.isAuth = true;
+            state.token = action.payload.token;
         },
         [singUpTC.fulfilled.type]: (state, action: PayloadAction<ISignUpResponse>) => {
             state.id = action.payload._id;
