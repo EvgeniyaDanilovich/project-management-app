@@ -59,8 +59,8 @@ export const ColumnsPage = () => {
                 </NavLink>
                 {editMode ?
                     <form onSubmit={handleSubmit(handleUpdateBoardTitle)}>
-                        <input type={'text'} {...register('title')} defaultValue={currentBoardTitle} />
-                        <button>upd</button>
+                        <input className={'input input__s'} type={'text'} {...register('title')} defaultValue={currentBoardTitle} />
+                        <button className={'buttonUpdate'}>Update</button>
                     </form>
                     : <div className={'title30'} onClick={() => setEditMode(true)}>{currentBoardTitle}</div>
                 }

@@ -1,4 +1,7 @@
 .taskWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 98%;
   text-align: left;
   min-height: 110px;
@@ -7,4 +10,14 @@
   background-color: #FFFFFF;
   border: 1px solid #ECEDE8;
   border-radius: 8px;
+}
+
+.deleteBtn{
+  align-self: flex-end;
+  margin-bottom: -5px;
+  cursor: pointer;
+}
+
+.title{
+  cursor: pointer;
 }

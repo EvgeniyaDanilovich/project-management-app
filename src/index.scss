@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root{
+#root {
   height: 100%;
 }
 
@@ -97,12 +97,12 @@ h6 {
   font-size: inherit;
 }
 
-.container{
+.container {
   max-width: 1160px;
   margin: 0 auto;
 }
 
-.wrapperPadding{
+.wrapperPadding {
   padding: 0 30px;
 }
 
@@ -114,49 +114,50 @@ h6 {
   padding: 15px 45px;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
-  &:hover{
+
+  &:hover {
     background-color: #333333;
     color: #FAFAFA;
   }
 }
 
-.title45{
+.title45 {
   font-weight: 700;
   font-size: 45px;
   line-height: 52px;
 }
 
-.title30{
+.title30 {
   font-weight: 700;
   font-size: 30px;
   line-height: 35px;
 }
 
-.title20{
+.title20 {
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
 }
 
-.title18{
+.title18 {
   font-weight: 600;
   font-size: 18px;
   line-height: 25px;
 }
 
-.text{
+.text {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 18px;
   line-height: 26px;
 }
 
-.text14{
+.text14 {
   @extend .text;
   font-size: 14px;
 }
 
-.boardCard{
+.boardCard {
   display: flex;
   flex-direction: column;
   width: 310px;
@@ -167,31 +168,45 @@ h6 {
   cursor: pointer;
 }
 
-.input{
-  width: 330px  ;
+.input {
+  width: 330px;
   padding: 13px 20px;
   border-radius: 4px;
   border: 2px solid #333333;
+
+  &__s {
+    width: 220px;
+    padding: 7px 20px;
+  }
 }
 
-.inputBox{
+.inputBox {
   margin-bottom: 15px;
 }
 
-.errorText{
+.errorText {
   display: block;
   font-size: 14px;
   text-align: left;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  margin:  5px 0 10px 0;
+  margin: 5px 0 10px 0;
 }
 
-.link{
+.link {
   color: #333333;
   border-bottom: 1px solid #333333;
 }
 
-.marginBottom25{
+.marginBottom25 {
   margin-bottom: 25px;
+}
+
+.buttonUpdate {
+  background: none;
+  margin-left: 10px;
+
+  &:hover {
+    color: #D6F164;
+  }
 }

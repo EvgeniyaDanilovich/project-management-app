@@ -11,9 +11,22 @@ import { ReactComponent as Technl2 } from '../../assets/images/technl2.svg';
 import { ReactComponent as Technl3 } from '../../assets/images/technl3.svg';
 import { ReactComponent as Technl4 } from '../../assets/images/technl4.svg';
 import Anim1 from '../../assets/images/anim1.jpg';
-import { Footer } from '../../components/footer/Footer';
+import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../hooks/redux';
 
 export const WelcomePage: React.FC = () => {
+    const { isAuth } = useAppSelector(state => state.auth);
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        console.log(isAuth);
+        if (isAuth) {
+            console.log('truuue');
+            return navigate('/boards')
+        }else{
+            return navigate('/login')
+        }
+    };
 
     return (
         <div>
@@ -30,7 +43,7 @@ export const WelcomePage: React.FC = () => {
                     <Icon1 className={styles.icon2} />
                 </div>
                 <div className={`text ${styles.text}`}>Our software will help you organize your workflow, set tasks, customer information, team management</div>
-                <div className={`btn`}>Get started</div>
+                <div onClick={handleRedirect} className={`btn`}>Get started</div>
                 <div>
                     <Icon4 className={`${styles.icon} ${styles.icon5}`} />
                     <Icon5 className={`${styles.icon} ${styles.icon6}`} />
@@ -65,7 +78,7 @@ export const WelcomePage: React.FC = () => {
             </section>
 
             <section className={`${styles.technologiesWrapper} ${styles.wrapperMargin}`}>
-                <h2 className={cn ('title45', styles.technologiesTitle)}>The following technologies were used in the development of the application</h2>
+                <h2 className={cn('title45', styles.technologiesTitle)}>The following technologies were used in the development of the application</h2>
                 <div className={styles.technologiesRow}>
                     <div className={styles.technologiesItem}>
                         <Technl1 className={cn(styles.technologiesIcon)} />

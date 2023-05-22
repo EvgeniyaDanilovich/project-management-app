@@ -38,18 +38,17 @@ export const CreateForm: React.FC<CreateUpdateFormProps> = (
                 {page === ItemType.TASK ?
                     <div className={'inputBox'}>
                         <input type={'text'} {...register('description',
-                        //     {
-                        //     required: 'Enter description',
-                        //     minLength: { value: 3, message: 'Min length is 3 symbols' }
-                        // }
+                            {
+                            required: 'Enter description',
+                            minLength: { value: 3, message: 'Min length is 3 symbols' }
+                        }
                         )} placeholder={'Task description'}  className={'input'}/>
-                        {/* {errors?.description && <p>{errors?.description.message}</p>} */}
+                        {errors?.description && <p>{errors?.description.message}</p>}
                     </div> : undefined
                 }
 
                 <div>
                     <ButtonBorder text={'Create'}  isValid={isValid} />
-                    {/* <button disabled={!isValid}>Create</button> */}
                 </div>
             </form>
         </>

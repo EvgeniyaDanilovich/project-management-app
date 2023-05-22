@@ -7,10 +7,6 @@ export interface ModalProps {
     children: ReactNode
 }
 
-// <div className={cn({[styles.active]: active}, 'modal')} onClick={closeModal}>
-// <div className={cn({ [styles.activeContent]: active },  'modal__content')}
-{/* <div className={active ? 'modal__content active' : 'modal__content'} */}
-
 export const Modal: React.FC<ModalProps> = ({ active, setActive, children }) => {
     const closeModal = () =>{
         setActive(false);

@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81c55708-281d-4f58-9bb8-f239387e8048" name="Changes" comment="fix: fix axios headers">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="81c55708-281d-4f58-9bb8-f239387e8048" name="Changes" comment="fix: add to gitignore">
+      <change afterPath="$PROJECT_DIR$/src/components/taskPreview/TaskPreview.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/column/Column.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/column/Column.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/column/Column.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/column/Column.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createForm/CreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createForm/CreateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/task/Task.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/task/Task.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/taskPreview/TaskPreview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/taskPreview/TaskPreview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/colunms-page/ColumnsPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/colunms-page/ColumnsPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/colunms-page/ColumnsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/colunms-page/ColumnsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/welcome-page/WelcomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/columns-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/columns-slice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +85,14 @@
       <workItem from="1683569519654" duration="79000" />
       <workItem from="1684744192514" duration="7292000" />
     </task>
+    <task id="LOCAL-00001" summary="fix: add to gitignore">
+      <created>1684752634659</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684752634659</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,5 +108,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: add to gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add to gitignore" />
   </component>
 </project>
