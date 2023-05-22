@@ -1,0 +1,55 @@
+.header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px 0px 0px 30px;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover{
+        border-bottom: 1px solid #333333;
+    }
+}
+
+.mainLink{
+    flex: 1 1 auto;
+    font-size: 28px;
+}
+
+a.active{
+    text-decoration: underline;
+}
+
+.subRow{
+    display: flex;
+}
+
+.auth_btn{
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 26px;
+    margin: 0 0 0 25px;
+    border: 2px solid  #333333;
+    border-radius: 4px;
+    color: #333333;
+    font-size: 15px;
+    &__b{
+        background-color: #333333;
+        color: #FAFAFA;
+    }
+
+    &:hover{
+        background-color: #D6F164;
+        color: #333333;
+    }
+}
