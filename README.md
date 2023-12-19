@@ -11,6 +11,7 @@ React, Redux toolkit, TypeScript, SCSS, React hook form.
 * User registration
 * Task management
 
+## Screenshots
 ### Main page
 ![image](https://github.com/EvgeniyaDanilovich/project-management-app/assets/68774339/f5bcf332-d696-4799-ba6c-0e2b28e584fa)
 ### Authorization
